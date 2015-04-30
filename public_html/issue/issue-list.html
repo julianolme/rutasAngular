@@ -1,0 +1,26 @@
+<h1>FRASE DE ISSUE-LIST CORRECTA</h1>
+<table>
+ <thead>
+  <tr>
+     <th>Number</th>
+     <th>Title</th>
+     <th>User</th>
+     <th>Created_at</th>
+  </tr>
+ </thead>
+ <tfoot>
+  <tr>
+     <td>&nbsp;</td>
+     <td>Numero total issues</td>
+     <td>{{listIssuesController.issues.length}}</td>
+  </tr>
+ </tfoot>
+ <tbody>
+  <tr ng-repeat="issue in listIssuesController.issues | orderBy: 'number'">
+     <td><a href="#/issue/edit/{{issue.number}}">{{issue.number}}</a></td>
+     <td>{{issue.title}}</td>
+     <td>{{issue.user.login}}</td>
+     <td>{{issue.created_at | date: 'medium'}}</td>
+  </tr>
+ </tbody>
+</table>
